@@ -1,0 +1,69 @@
+{% extends '../layouts/default.html' %}
+
+{% block content %}
+
+  <div class="w-nav main_menu main_menu_interna" data-collapse="medium" data-animation="over-left" data-duration="400" data-contain="1">
+    <div class="w-container">
+      <a class="w-nav-brand" href="/">
+          <img class="main_menu_logo" src="img/logo_site.svg" alt="550d87647555cd57554d6465_logo_site.svg">
+          <img class="main_menu_logo_mobile main_menu_logo_mobile_interna" src="img/logo_rodape.svg" alt="550d85ad3205ed7e3f2cae69_logo_rodape.svg">
+      </a>
+      <nav class="w-nav-menu menu_lateral" role="navigation">
+          <a class="w-nav-link main_menu_list_item" href="#">o projeto</a>
+          <a class="w-nav-link main_menu_list_item" href="/causes">oportunidades</a>
+      </nav>
+      <div class="w-nav-button menu_button">
+        <div class="w-icon-nav-menu icon_menu icon_menu_interna"></div>
+      </div>
+    </div>
+  </div>
+  <div class="w-section main_interna">
+    <div class="w-container main_container_interna">
+      <div class="text_head">oportunidades</div>
+      <h1 class="h1_interna">Tem sempre uma vaga do seu jeito esperando por você <strong xmlns="http://www.w3.org/1999/xhtml">: )</strong></h1>
+        {% if causes.length == 0 %}
+        <br>
+        <h2 class="h2_oportunidade">Nenhuma oportunidade aberta!</h2>
+        <br>
+        {% else %}
+
+        <ul class="w-list-unstyled li_oportunidades">
+            {% for cause in causes %}
+
+            <li class="li_oportunidades_item">
+              <div class="w-clearfix sub_oportunidades">
+                <div class="w-clearfix oportunidade_coluna_1">
+                  <h2 class="h2_oportunidade">{{cause.ngo.name}}</h2>
+                  <div class="text_head_small"><a class="link_site_ong" href="{{ngo.website}}">visitar site da ONG</a>
+                  </div>
+                  <div class="label_oportunidade">Descrição da vaga</div>
+                  <p class="p_oportunidade">{{cause.title}}</p>
+                  <div class="div_horario">
+                    <div class="label_oportunidade">Horário</div>
+                    <p class="p_oportunidade">{{cause.time}}</p>
+                  </div>
+                  <div class="div_local">
+                    <div class="label_oportunidade">Local</div>
+                    <p class="p_oportunidade">{{cause.place}}</p>
+                  </div>
+                  <ul class="w-list-unstyled tags_list">
+                      {% for tag in cause.tags %}
+                    <li class="tags_list_item">
+                      <div>{{tag}}</div>
+                    </li>
+                      {% endfor %}
+                  </ul>
+                </div>
+                <div class="oportunidade_coluna_2"><a class="bt_hero bt_oportunidade" href>me interesso</a><a class="link_share" href>Compartilhar essa vaga no Facebook</a>
+                </div>
+              </div>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+  </div>
+
+
+{% endblock %}
+  

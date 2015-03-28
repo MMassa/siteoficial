@@ -1,0 +1,34 @@
+<!doctype html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>{{ pkg.name }} || {{title}}</title>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+      <script>
+          WebFont.load({
+              google: {
+                  families: ["Ubuntu:300,300italic,400,400italic,500,500italic,700,700italic","Merriweather:300,400,700,900"]
+              }
+          });
+      </script>
+
+    {% block head %}
+    {# Styles #}
+      <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+      <link rel="stylesheet" type="text/css" href="/css/webflow.css">
+      <link rel="stylesheet" type="text/css" href="/css/maonamassa-beta.webflow.css">
+      <link rel="shortcut icon" type="image/x-icon" href="https://daks2k3a4ib2z.cloudfront.net/img/favicon.ico">
+      <link rel="apple-touch-icon" href="https://daks2k3a4ib2z.cloudfront.net/img/webclip.png">
+
+    {% endblock %}
+  </head>
+
+  {# HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries #}
+  <!--[if lt IE 9]>
+    <script src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js'></script>
+    <script src='https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js'></script>
+  <![endif]-->
